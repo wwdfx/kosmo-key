@@ -1,0 +1,14 @@
+# Root Caddy reverse proxy for Docker Compose (local/staging)
+:80 {
+	encode zstd gzip
+
+	# Route all /api/* requests to the Node.js TypeScript backend container
+	handle /api/* {
+		reverse_proxy backend:4000
+	}
+
+	# Route all other requests to the React frontend container
+	handle {
+		reverse_proxy frontend:80
+	}
+}
