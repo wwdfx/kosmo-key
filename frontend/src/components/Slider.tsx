@@ -2,10 +2,14 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { MoveLeft, MoveRight } from "lucide-react";
 import "swiper/css";
+import LiquidButton from "./LiquidButton";
 
-import lluis from "../assets/images/team/LluísEspinosa.jpg";
+import Sylvia from "../assets/images/team/SylviaGon.jpeg";
+import Viktor from "../assets/images/team/ViktorIhnatiev.jpeg";
+import Lluis from "../assets/images/team/LluísEspinosa.jpeg";
+import Jana from "../assets/images/team/JanaTransition.jpeg";
 
 type Card = {
   id: number;
@@ -24,6 +28,7 @@ const cards: Card[] = [
     id: 2,
     name: "Sylvia Gon",
     role: "Diseño de marca y presencia digital",
+    image: Sylvia,
   },
   {
     id: 3,
@@ -34,6 +39,7 @@ const cards: Card[] = [
     id: 4,
     name: "Viktor Ihnatiev",
     role: "Desarrollo web y automatización de procesos",
+    image: Viktor,
   },
   {
     id: 5,
@@ -44,7 +50,7 @@ const cards: Card[] = [
     id: 6,
     name: "Lluis Espinosa",
     role: "Terapia en biodescodificación y transgeneracional",
-    image: lluis,
+    image: Lluis,
   },
   {
     id: 7,
@@ -55,6 +61,7 @@ const cards: Card[] = [
     id: 8,
     name: "Jana Transition",
     role: "Facilitadora de meditación y transformación energética",
+    image: Jana,
   },
   {
     id: 9,
@@ -67,7 +74,7 @@ function Slider() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="mx-auto w-full min-w-0 max-w-[1212px]">
+    <div className="mx-auto w-full min-w-0 max-w-[1308px]">
       <Swiper
         modules={[Mousewheel]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -84,39 +91,41 @@ function Slider() {
               <img
                 src={card.image}
                 alt={card.name}
-                className="h-[420px] w-full rounded-3xl object-cover"
+                className="h-[420px] w-full rounded-4xl object-cover"
               />
             ) : (
-              <div className="h-[420px] w-full rounded-3xl bg-gray-300" />
+              <div className="h-[420px] w-full rounded-4xl bg-gray-300" />
             )}
-            <div className="mt-4 text-center">
+            <div className="mt-[33px] text-center text-[22px]">
               <h3>{card.name}</h3>
-              <p className="mt-1 text-sm">{card.role}</p>
+              <p className=" mx-auto max-w-[380px]">{card.role}</p>
             </div>
-            <div className="mt-4 flex justify-center gap-3">
-              <button className="cursor-pointer rounded-full border border-white/40 px-5 py-1 text-xs">
+            <div className="mt-[37px] flex justify-center gap-8">
+              <LiquidButton className="px-3 py-2.5 text-[13px]">
                 Más información
-              </button>
-              <button className="cursor-pointer rounded-full border border-[#b0ff32]/50 bg-[#b0ff32]/10 px-5 py-1 text-xs text-[#b0ff32]">
+              </LiquidButton>
+              <LiquidButton className="px-8.75 py-2.5 text-[13px] border-(--accent-green)/50! bg-(--accent-green)/10! text-(--accent-green) hover:bg-(--accent-green)/20! hover:border-(--accent-green)! active:bg-(--accent-green)/30!">
                 Servicios
-              </button>
+              </LiquidButton>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="mt-7.5 flex justify-end gap-4">
-        <button
-          className="cursor-pointer"
+        <LiquidButton
+          ariaLabel="Back"
+          className="flex size-12 items-center justify-center"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <ArrowLeft size={21} />
-        </button>
-        <button
-          className="cursor-pointer"
+          <MoveLeft size={24} strokeWidth={1.5} />
+        </LiquidButton>
+        <LiquidButton
+          ariaLabel="Next"
+          className="flex size-12 items-center justify-center"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <ArrowRight size={21} />
-        </button>
+          <MoveRight size={24} strokeWidth={1.5} />
+        </LiquidButton>
       </div>
     </div>
   );

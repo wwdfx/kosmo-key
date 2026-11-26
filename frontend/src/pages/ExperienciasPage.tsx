@@ -1,4 +1,4 @@
-function Experiencias() {
+function ExperienciasPage() {
   return (
     <>
       <h2 className="text-center p-20">Experiencias</h2>
@@ -6,4 +6,4 @@ function Experiencias() {
   );
 }
 
-export default Experiencias;
+export default ExperienciasPage;

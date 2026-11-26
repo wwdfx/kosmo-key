@@ -1,4 +1,4 @@
-function Servicios() {
+function ServiciosPage() {
   return (
     <>
       <section className="flex justify-between">
@@ -50,4 +50,4 @@ function Servicios() {
   );
 }
 
-export default Servicios;
+export default ServiciosPage;

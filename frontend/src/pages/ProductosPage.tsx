@@ -1,4 +1,4 @@
-function Productos() {
+function ProductosPage() {
   return (
     <>
       <h2 className="text-center p-20">Productos</h2>
@@ -6,4 +6,4 @@ function Productos() {
   );
 }
 
-export default Productos;
+export default ProductosPage;

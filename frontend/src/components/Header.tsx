@@ -13,8 +13,12 @@ function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-3.5 pr-[15px]">
-          <User size={34} color="white" />
-          <ShoppingBag size={28} color="white" />
+          <button className="cursor-pointer">
+            <User size={34} color="white" />
+          </button>
+          <button className="cursor-pointer">
+            <ShoppingBag size={28} color="white" />
+          </button>
         </div>
       </div>
       <ul className="flex justify-between gap-2 text-[12px] uppercase tracking-widest">

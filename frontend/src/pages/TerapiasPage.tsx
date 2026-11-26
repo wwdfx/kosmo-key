@@ -1,4 +1,4 @@
-function Terapias() {
+function TerapiasPage() {
   return (
     <>
       <section>
@@ -48,4 +48,4 @@ function Terapias() {
   );
 }
 
-export default Terapias;
+export default TerapiasPage;
