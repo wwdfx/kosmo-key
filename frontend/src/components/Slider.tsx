@@ -8,7 +8,7 @@ import LiquidButton from "./LiquidButton";
 
 import Sylvia from "../assets/images/team/SylviaGon.jpeg";
 import Viktor from "../assets/images/team/ViktorIhnatiev.jpeg";
-import Lluis from "../assets/images/team/LluísEspinosa.jpeg";
+import Lluis from "../assets/images/team/LluisEspinosa.jpeg";
 import Jana from "../assets/images/team/JanaTransition.jpeg";
 
 type Card = {
@@ -81,8 +81,9 @@ function Slider() {
         mousewheel={{ releaseOnEdges: true }}
         spaceBetween={72}
         breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 3 },
+          0: { slidesPerView: 1, slidesPerGroup: 1 },
+          640: { slidesPerView: 2, slidesPerGroup: 2 },
+          1024: { slidesPerView: 3, slidesPerGroup: 3 },
         }}
       >
         {cards.map((card) => (

@@ -22,11 +22,6 @@
 
 /* Theme */
 
-@theme {
-  --font-sans: "Nunito Sans", sans-serif;
-  --tracking-normal: 0.05em;
-}
-
 :root {
   --bg-primary: #000000;
   --text-primary: #ffffff;
@@ -43,9 +38,26 @@
     padding: 0;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: var(--font-sans);
+    font-family: "Nunito Sans", sans-serif;
     font-stretch: expanded;
     letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Components */
+
+@layer components {
+  .split-section {
+    @apply grid grid-cols-1 md:h-[480px] md:grid-cols-2 lg:h-[720px];
   }
 }

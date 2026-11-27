@@ -4,7 +4,7 @@ import { User, ShoppingBag } from "lucide-react";
 
 function Header() {
   return (
-    <header className="flex flex-col gap-2.5  px-[50px]  py-2.5 ">
+    <header className="flex flex-col gap-2.5  px-[50px]  py-10 ">
       <div className="flex justify-between">
         <div></div>
         <div>
